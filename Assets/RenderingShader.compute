@@ -1,0 +1,170 @@
+﻿#pragma kernel CSMain
+
+RWTexture2D<float4> Result;
+
+float4x4 _CameraToWorld;
+float4x4 _CameraInverseProjection;
+
+float4 _DirectionalLight;
+
+float2 _PixelOffset;
+
+Texture2D<float4> _SkyboxTexture;
+SamplerState sampler_SkyboxTexture;
+
+static const float PI = 3.14159265f;
+static const float EPSILON = 1e-8;
+
+//-------------------------------------
+//- UTILITY
+
+float sdot(float3 x, float3 y, float f = 1.0f)
+{
+	return saturate(dot(x, y) * f);
+}
+
+float energy(float3 color)
+{
+	return dot(color, 1.0f / 3.0f);
+}
+
+//-------------------------------------
+//- RANDOMNESS
+
+float2 _Pixel;
+float _Seed;
+
+float rand()
+{
+	float result = frac(sin(_Seed / 100.0f * dot(_Pixel, float2(12.9898f, 78.233f))) * 43758.5453f);
+	_Seed += 1.0f;
+	return result;
+}
+
+
+//-------------------------------------
+//- SPHERES
+
+struct Sphere
+{
+	float3 position;
+	float radius;
+	float3 albedo;
+	float3 specular;
+	float smoothness;
+	float3 emission;
+};
+
+StructuredBuffer<Sphere> _Spheres;
+
+//-------------------------------------
+//- MESHES
+
+struct MeshObject
+{
+	float4x4 localToWorldMatrix;
+	int indices_offset;
+	int indices_count;
+};
+
+StructuredBuffer<MeshObject> _MeshObjects;
+StructuredBuffer<float3> _Vertices;
+StructuredBuffer<int> _Indices;
+
+
+
+//-------------------------------------
+//- 
+
+float SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_PITCH;
+ 
+
+void swap(inout float value1 , inout float value2) {
+	float temp;
+	temp = value1;
+	value1 = value2;
+	value2 = value1;
+}
+
+void device_pixel(float x, float y) {
+	if (_Pixel.x == x && _Pixel.y == y) {
+		Result[_Pixel] = float4(1, 1, 1, 1);
+	}
+}
+void drawLine(float3 vertex1, float3 vertex2, float3 color) {
+	int x1 = vertex1.x;
+	int y1 = vertex1.y;
+	int x2 = vertex2.x;
+	int y2 = vertex2.y;
+
+	int x, y, rem = 0;
+	if (x1 == x2 && y1 == y2) {
+		device_pixel(x1, y1);
+	}
+	else if (x1 == x2) {
+		int inc = (y1 <= y2) ? 1 : -1;
+		for (y = y1; y != y2; y += inc) {
+			device_pixel(x1, y);
+		}  
+		device_pixel(x2, y2);
+
+	}
+	else if (y1 == y2) {
+		int inc = (x1 <= x2) ? 1 : -1;
+		for (x = x1; x != x2; x += inc) {
+			device_pixel(x, y1);
+		}  
+	}
+	else {
+		int dx = (x1 < x2) ? x2 - x1 : x1 - x2;
+		int dy = (y1 < y2) ? y2 - y1 : y1 - y2;
+		if (dx >= dy) {
+			if (x2 < x1) x = x1, y = y1, x1 = x2, y1 = y2, x2 = x, y2 = y;
+			for (x = x1, y = y1; x <= x2; x++) {
+				device_pixel(x, y);
+				rem += dy;
+				if (rem >= dx) {
+					rem -= dx;
+					y += (y2 >= y1) ? 1 : -1;
+					device_pixel(x, y);
+				}
+			}
+			device_pixel(x2, y2);
+		}
+		else {
+			if (y2 < y1) x = x1, y = y1, x1 = x2, y1 = y2, x2 = x, y2 = y;
+			for (x = x1, y = y1; y <= y2; y++) {
+				device_pixel(x, y);
+				rem += dx;
+				if (rem >= dy) {
+					rem -= dy;
+					x += (x2 >= x1) ? 1 : -1;
+					device_pixel(x, y);
+				}
+			}
+			device_pixel(x2, y2);
+		}
+	}
+}
+
+//-------------------------------------
+//- KERNEL
+
+[numthreads(8, 8, 1)]
+void CSMain(uint3 id : SV_DispatchThreadID)
+{
+	_Pixel = id.xy;
+
+	// Get the dimensions of the RenderTexture
+	uint width, height;
+	Result.GetDimensions(width, height);
+
+	SCREEN_WIDTH = width;
+	SCREEN_HEIGHT = height;
+	SCREEN_PITCH = width / height;
+		 
+	Result[id.xy] = float4(0, 0, 0, 1);
+	 
+	drawLine(float3(SCREEN_WIDTH/2, SCREEN_HEIGHT /2, 0), float3(SCREEN_WIDTH, SCREEN_HEIGHT, 0), float3(1, 1, 1));
+	//drawLine(float3(0.5,0.5, 0), float3(0.5,1.0, 0), float3(1, 1, 1));
+}
