@@ -1,0 +1,18 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+
+// Create a RenderTexture with enableRandomWrite flag and set it
+// with cs.SetTexture
+RWTexture2D<float4> Result;
+
+StructuredBuffer<float4> _PixelBuffer;;
+
+[numthreads(8,8,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+	uint width, height;
+	Result.GetDimensions(width, height);
+
+	//Result[id.xy] = pow(_PixelBuffer[(id.y)*width + (id.x)], 2.2f);
+	Result[id.xy] = pow(_PixelBuffer[id.y*width + id.x],2.2f);
+}
