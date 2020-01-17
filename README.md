@@ -16,6 +16,7 @@ SoftwareRendering
 (7)像素着色器
 
 3:抗锯齿(SSAA)
+
 -----------------------------------------------------------------------------------------------------------------------
 画点(背面剔除)
 ![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/DrawPointWithBackFaceCulling.png)
