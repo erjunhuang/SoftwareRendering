@@ -1,7 +1,8 @@
 # SoftwareRendering
 SoftwareRendering
 
-项目介绍
+项目介绍(用unity制作的光栅化渲染器 不定时更新)
+
 1:获取模型数据
 
 2:绘制三角形
@@ -33,5 +34,8 @@ SoftwareRendering
 画三角形
 ![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/DrawTriangleWithBackFaceCulling.png)
 
-抗锯齿
+无抗锯齿
+![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/NoSSAA.png)
+
+有抗锯齿
 ![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/SSAA.png)

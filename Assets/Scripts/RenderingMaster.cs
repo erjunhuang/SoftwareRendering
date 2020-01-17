@@ -16,7 +16,6 @@ public class RenderingMaster : MonoBehaviour
     public float _SampleSize = Screen.width/2;
 
     public ComputeShader RayTracingShader;
-    public Texture SkyboxTexture;
     public Light DirectionalLight;
 
     private Camera _camera;
