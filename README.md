@@ -34,6 +34,9 @@ SoftwareRendering
 画三角形
 ![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/DrawTriangleWithBackFaceCulling.png)
 
+深度测试
+![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/ZTest.png)
+
 无抗锯齿
 ![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/NoSSAA.png)
 

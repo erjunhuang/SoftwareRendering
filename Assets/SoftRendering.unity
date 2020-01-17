@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 7439629463224087972}
-  m_IndirectSpecularColor: {r: 0.1823, g: 0.22486874, b: 0.2891152, a: 1}
+  m_IndirectSpecularColor: {r: 0.1273174, g: 0.13414761, b: 0.12107885, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -583,7 +583,7 @@ PrefabInstance:
     - target: {fileID: 2300000, guid: a6379f85770f5ca4aa275ab29e9c1a41, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 2100000, guid: a6379f85770f5ca4aa275ab29e9c1a41, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6379f85770f5ca4aa275ab29e9c1a41, type: 3}
 --- !u!1 &173121811
@@ -1209,9 +1209,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10fe605ed24151c4f9d4e0526610e597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _SampleSize: 556
+  _SampleSize: 1280
   RayTracingShader: {fileID: 7200000, guid: 88a73d345434bb641b4fc134b025aae2, type: 3}
-  SkyboxTexture: {fileID: 2800000, guid: 047cc8c0e5809f14bbc66dbf01063372, type: 3}
   DirectionalLight: {fileID: 7439629463224087972}
   _indices: 
   _vertices: []
@@ -2099,7 +2098,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100002, guid: c5e47764f975bad4db728d9a88fa2911, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c5e47764f975bad4db728d9a88fa2911, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2422,7 +2421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c55e084d8a49709409f7d0d12b3bb470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  albedoTexture: {fileID: 2800000, guid: c2f5342ce87cf224a901f5521abc6053, type: 3}
+  albedoTexture: {fileID: 2800000, guid: 1029caa00acce3a4485de65e932901bd, type: 3}
   aoTexture: {fileID: 0}
   roughTexture: {fileID: 0}
   metalTexture: {fileID: 0}
@@ -3103,13 +3102,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7439629463224087979}
-  m_LocalRotation: {x: 0.17342424, y: 0.04999595, z: -0.008815634, w: 0.9835379}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.5, y: 1, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 969467084}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 20, y: 5.82, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7439629463224087979
 GameObject:
   m_ObjectHideFlags: 0
