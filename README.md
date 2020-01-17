@@ -2,7 +2,7 @@
 SoftwareRendering
 
 项目介绍
-1:获取模型数据(模型数据终究只是一堆文本数据)
+1:获取模型数据
 
 2:绘制三角形
 (1)提前面剔除
@@ -16,5 +16,21 @@ SoftwareRendering
 (7)像素着色器
 
 3:抗锯齿(SSAA)
+-----------------------------------------------------------------------------------------------------------------------
+画线(背面剔除)
+![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/DrawLineWithBackFaceCulling.png)
 
-![Image text](https://raw.githubusercontent.com/hongmaju/light7Local/master/img/productShow/20170518152848.png)
+画线(无背面剔除)
+![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/DrawLineWithNoBackFaceCulling.png)
+
+画点(背面剔除)
+![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/DrawPointWithBackFaceCulling.png)
+
+画点(无背面剔除)
+![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/DrawPointWithNoBackFaceCulling.png)
+
+画三角形
+![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/DrawTriangleWithBackFaceCulling.png)
+
+抗锯齿
+![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/SSAA.png)
