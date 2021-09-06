@@ -19,17 +19,17 @@ SoftwareRendering
 3:FXAA
 
 -----------------------------------------------------------------------------------------------------------------------
-画点(背面剔除)
-![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/DrawPointWithBackFaceCulling.png)
-
 画点(无背面剔除)
 ![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/DrawPointWithNoBackFaceCulling.png)
 
-画线(背面剔除)
-![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/DrawLineWithBackFaceCulling.png)
+画点(背面剔除)
+![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/DrawPointWithBackFaceCulling.png)
 
 画线(无背面剔除)
 ![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/DrawLineWithNoBackFaceCulling.png)
+
+画线(背面剔除)
+![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/DrawLineWithBackFaceCulling.png)
 
 画三角形
 ![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/DrawTriangleWithBackFaceCulling.png)
