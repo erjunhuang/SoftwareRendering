@@ -14,7 +14,9 @@ SoftwareRendering
 (6-1)画点
 (6-2)画线(Cohen–Sutherland 裁剪算法 - Bresenham画线算法)
 (6-3)画三角形(包含提前深度测试)
-(7)像素着色器
+(7)透视矫正 
+(8)重心插值
+(9)像素着色器
 
 3:FXAA
 
