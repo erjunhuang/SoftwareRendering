@@ -22,25 +22,25 @@ SoftwareRendering
 
 -----------------------------------------------------------------------------------------------------------------------
 画点(无背面剔除)
-![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/DrawPointWithNoBackFaceCulling.png)
+![Image text](./ProjectInfo/DrawPointWithNoBackFaceCulling.png)
 
 画点(背面剔除)
-![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/DrawPointWithBackFaceCulling.png)
+![Image text](./ProjectInfo/DrawPointWithBackFaceCulling.png)
 
 画线(无背面剔除)
-![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/DrawLineWithNoBackFaceCulling.png)
+![Image text](./ProjectInfo/DrawLineWithNoBackFaceCulling.png)
 
 画线(背面剔除)
-![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/DrawLineWithBackFaceCulling.png)
+![Image text](./ProjectInfo/DrawLineWithBackFaceCulling.png)
 
 画三角形
-![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/DrawTriangleWithBackFaceCulling.png)
+![Image text](./ProjectInfo/DrawTriangleWithBackFaceCulling.png)
 
 深度测试
-![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/ZTest.png)
+![Image text](./ProjectInfo/ZTest.png)
 
 无抗锯齿
-![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/NoSSAA.png)
+![Image text](./ProjectInfo/NoSSAA.png)
 
 有抗锯齿
-![Image text](https://github.com/erjunhuang/SoftwareRendering/blob/master/ProjectInfo/SSAA.png)
+![Image text](./ProjectInfo/SSAA.png)
